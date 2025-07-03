@@ -8,8 +8,8 @@ const projects = [
       "A beautiful lading page about Hogwarts using React and Tailwind.",
     Image: "/Projects/Project1.png",
     tags: ["React", "TailwindCSS", "Next"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://hogwarts.renatarsilva.com/",
+    githubUrl: "https://github.com/renatarsilva/hogwarts",
   },
   {
     id: 2,
@@ -17,8 +17,8 @@ const projects = [
     description: "Medical appointment platform.",
     Image: "/Projects/Project2.png",
     tags: ["React", "TailwindCSS", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://carepulse-five-alpha.vercel.app/",
+    githubUrl: "https://github.com/renatarsilva/carepulse",
   },
   {
     id: 3,
@@ -26,8 +26,8 @@ const projects = [
     description: "A beautiful lading page about Travel.",
     Image: "/Projects/Project3.png",
     tags: ["React", "TailwindCSS", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://travel-app-mauve-nine.vercel.app/",
+    githubUrl: "https://github.com/renatarsilva/travel",
   },
   {
     id: 4,
@@ -36,8 +36,8 @@ const projects = [
       "Store It is a cloud-based file storage application similar to Google Drive..",
     Image: "/Projects/Project4.png",
     tags: ["React", "TailwindCSS", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://store-it-one-beta.vercel.app/sign-in",
+    githubUrl: "https://github.com/renatarsilva/store-it",
   },
   {
     id: 5,
@@ -45,8 +45,8 @@ const projects = [
     description: "Explore the Possibilites of  AI  Chatting with Brainwave",
     Image: "/Projects/Project5.png",
     tags: ["React", "TailwindCSS", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://brainwave-site-nu.vercel.app/",
+    githubUrl: "https://github.com/renatarsilva/brainwave-site",
   },
   {
     id: 6,
@@ -54,8 +54,8 @@ const projects = [
     description: "A safe place to watching your favorites animes",
     Image: "/Projects/Project6.png",
     tags: ["React", "TailwindCSS", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://anime-vault-ten-ashen.vercel.app/",
+    githubUrl: "https://github.com/renatarsilva/anime-vault",
   },
 ];
 export const ProjectsSection = () => {

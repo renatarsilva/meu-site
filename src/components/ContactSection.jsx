@@ -1,11 +1,25 @@
-import { Linkedin, Mail, Send, Twitter } from "lucide-react";
+import { Linkedin, Mail, MapPin, Send, Twitter } from "lucide-react";
 import { cn } from "@/Lib/utils";
+import { useToast } from "../hooks/use-toast";
+import { Description } from "@radix-ui/react-toast";
+import { useState } from "react";
 
 export const ContactSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSumitting] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setTimeout(() => {}, 1500);
+    setIsSumitting(true);
+
+    setTimeout(() => {
+      toast({
+        title: "Message sent!",
+        Description: "Thank you for your message. I'll get back to you soon.",
+      });
+      setIsSumitting(false);
+    }, 1500);
   };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -36,20 +50,29 @@ export const ContactSection = () => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="pt-8">
-              <h4 className="font-medium mb-4">connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
-                  <Linkedin />{" "}
-                </a>
-                <a href="#" target="_blank">
-                  <Twitter />{" "}
-                </a>
+
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <MapPin className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Location</h4>{" "}
+                  <a
+                    // href="https://www.linkedin.com/in/renatarsilvadotcom/"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {" "}
+                    Brazil
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-          <div className="bg-card p-8 rounded-lg shadow-xs">
+
+          <div
+            className="bg-card p-8 rounded-lg shadow-xs"
+            onSubmit={handleSubmit}
+          >
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
             <form className="space-y-6">
@@ -105,12 +128,12 @@ export const ContactSection = () => {
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className={cn(
                   "cosmic-button w-full flex items-center justify-center gap-2"
                 )}
               >
-                {" "}
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send size={16} />
               </button>
             </form>
