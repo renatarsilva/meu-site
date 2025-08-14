@@ -1,5 +1,5 @@
 import { Linkedin, Mail, MapPin, Send, Twitter } from "lucide-react";
-import { cn } from "@/Lib/utils";
+import cn from "../lib/utils";
 import { useToast } from "../hooks/use-toast";
 import { Description } from "@radix-ui/react-toast";
 import { useState } from "react";
