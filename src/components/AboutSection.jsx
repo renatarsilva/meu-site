@@ -48,12 +48,10 @@ export const AboutSection = () => {
                   <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">
-                    Full-Stack Development
-                  </h4>
+                  <h4 className="font-semibold text-lg">Development Skills</h4>
                   <p className="text-muted-foreground">
-                    Building full-stack applications using modern frameworks and
-                    technologies.
+                    I love creating apps that are both functional and easy to
+                    use.
                   </p>
                 </div>
               </div>
@@ -64,12 +62,10 @@ export const AboutSection = () => {
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">
-                    Full-Stack Development
-                  </h4>
+                  <h4 className="font-semibold text-lg">About Me</h4>
                   <p className="text-muted-foreground">
-                    Building full-stack applications using modern frameworks and
-                    technologies.
+                    Curious developer, always learning and experimenting with
+                    new tech.
                   </p>
                 </div>
               </div>
@@ -80,12 +76,10 @@ export const AboutSection = () => {
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">
-                    Full-Stack Development
-                  </h4>
+                  <h4 className="font-semibold text-lg">Career & Projects</h4>
                   <p className="text-muted-foreground">
-                    Building full-stack applications using modern frameworks and
-                    technologies.
+                    From class projects to personal ideas, I enjoy turning
+                    concepts into real solutions.
                   </p>
                 </div>
               </div>
