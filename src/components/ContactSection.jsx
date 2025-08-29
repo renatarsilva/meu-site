@@ -1,24 +1,29 @@
-import { Linkedin, Mail, MapPin, Send, Twitter } from "lucide-react";
+import { Linkedin, Mail, MapPin, Send } from "lucide-react";
 import cn from "../lib/utils";
 import { useToast } from "../hooks/use-toast";
-import { Description } from "@radix-ui/react-toast";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export const ContactSection = () => {
   const { toast } = useToast();
-  const [isSubmitting, setIsSumitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setIsSumitting(true);
+    setIsSubmitting(true);
+
+    e.target.submit();
 
     setTimeout(() => {
       toast({
         title: "Message sent!",
-        Description: "Thank you for your message. I'll get back to you soon.",
+        description: "Thank you for your message. I'll get back to you soon.",
       });
-      setIsSumitting(false);
+
+      setIsSubmitting(false);
+
+      formRef.current.reset();
     }, 1500);
   };
 
@@ -67,102 +72,44 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
+          <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-            {/* <form
-              action="https://formsubmit.co/renata.rodriguesdasilva@outlook.com"
-              method="POST"
-        
-            >
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
-                  placeholder="Your name..."
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Your Email
-                </label>
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
-                  placeholder="email@email.com"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary resize-none"
-                  placeholder="Hello, I'd like to talk about..."
-                />
-              </div>
-
-
-            </form> */}
             <form
+              ref={formRef}
               target="_blank"
               action="https://formsubmit.co/renata.rodriguesdasilva@outlook.com"
               method="POST"
+              onSubmit={handleSubmit}
               className="space-y-2"
             >
-              <div class="col">
+              <div className="col">
                 <input
                   type="text"
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                   placeholder="Your name..."
                 />
               </div>
-              <div class="col">
+              <div className="col">
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                   placeholder="email@email.com"
                 />
               </div>
 
-              <div class="form-group">
+              <div className="form-group">
                 <textarea
                   id="message"
                   name="message"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlind-hidden focus:ring-2 focus:ring-primary resize-none"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 ></textarea>
               </div>
