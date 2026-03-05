@@ -63,7 +63,7 @@ export const ContactSection = () => {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Location</h4>
+                  <h4 className="font-medium flex items-center">Location</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
                     Brazil
                   </a>
