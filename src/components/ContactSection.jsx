@@ -50,7 +50,7 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium">Linkedin</h4>
                   <a
-                    href="https://www.linkedin.com/in/renatarsilvadotcom/"
+                    href="https://www.linkedin.com/in/renatarsilvain/"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     Chat me here
